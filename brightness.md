@@ -39,7 +39,7 @@ A blank window will pop up. Press the key(s) to which you wish to assign a comma
 ```
 The first line represents a command. The second contains the state (0x8) and keycode (32) as reported by `xev`. The third line contains the keysyms associated with the given keycodes. To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform.
 
-**in my case, to bind keys to adjust the backlight, edit `~/.xbindkeysrc` below:**
+**in my case, to bind keys to adjust the backlight, edit `~/.xbindkeysrc` like below:**
 ```bash
 # increase backlight by 10
 "xbacklight -inc 10"
@@ -51,3 +51,13 @@ m:0x5 + c:35
 m:0x5 + c:34
 #Control+Shift + bracketleft
 ```
+
+#### automatically run xbindkeys on startup
+
+`＃ vim /etc/rc.local`
+
+add below command:
+
+`/usr/bin/xbindkeys`
+
+save and quit.
