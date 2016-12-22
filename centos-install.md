@@ -43,6 +43,8 @@
 >**Centos 7**
 
 >`wget -O CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3`
+ 
+ 运行 `yum makecache` 生成缓存
 
 ##### 4.修改hostname
 修改 `/etc/hostname` 文件
