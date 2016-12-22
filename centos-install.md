@@ -6,22 +6,21 @@
 #### 二、CentOS7 配置
 ##### 1. 配置网络
 
-安装minimal版, 默认是开机不启用网卡的, 通过root登录后, 使用 `service network start` 命令启动网卡。
-
+安装minimal版, 默认是开机不启用网卡的, 通过root登录后, 使用 `service network start` 命令启动网卡。 
 执行 `ip -s address` , 我们会看到ip信息。
 
 但我们不能每次开机后都执行一遍启动网卡, 下面我们设置网卡开机自动：
 
 修改配置文件: `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`  
-
 将该文件 ONBOOT="no" 改成yes 
 
 下次启动时网卡会开机启动。
 
 ##### 2. 添加用户，用作日常使用系统
-`# useradd martin`
-
-`# passwd martin`
+```
+# useradd martin
+# passwd martin
+```
 
 编辑 `/etc/sudoers` 文件，添加用户martin：
 
@@ -41,7 +40,6 @@
 3.根据不同操作系统选择不同url源：
 
 >**Centos 7**
-
 >`wget -O CentOS-Base.repo https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3`
  
  运行 `yum makecache` 生成缓存
